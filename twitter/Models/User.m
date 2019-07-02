@@ -15,6 +15,8 @@
     if (self) {
         self.name = dictionary[@"name"];
         self.screenName = dictionary[@"screen_name"];
+        NSString *profilePictureURLString = dictionary[@"profile_image_url_https"];
+        self.profilePictureURL = [NSURL URLWithString:profilePictureURLString];
         
         // Initialize any other properties
     }
