@@ -5,60 +5,7 @@
 	<key>logFormatVersion</key>
 	<integer>10</integer>
 	<key>logs</key>
-	<dict>
-		<key>159BF631-0F45-4703-8B1D-5654BEBD1729</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
-			<key>fileName</key>
-			<string>159BF631-0F45-4703-8B1D-5654BEBD1729.xcactivitylog</string>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-			</dict>
-			<key>signature</key>
-			<string>twitter-fclkaosonhktcrahowkfydwtsxdn</string>
-			<key>timeStartedRecording</key>
-			<real>583871272.24126303</real>
-			<key>timeStoppedRecording</key>
-			<real>583871272.75710702</real>
-			<key>title</key>
-			<string>Build target twitter</string>
-			<key>uniqueIdentifier</key>
-			<string>159BF631-0F45-4703-8B1D-5654BEBD1729</string>
-		</dict>
-		<key>47A90E1B-9C85-48C7-B2D1-EBDA1A3AF3A0</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.target.product-type.library.static</string>
-			<key>fileName</key>
-			<string>47A90E1B-9C85-48C7-B2D1-EBDA1A3AF3A0.xcactivitylog</string>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-			</dict>
-			<key>signature</key>
-			<string>AFNetworking-abqowsrololeakdhboipuljzaecm</string>
-			<key>timeStartedRecording</key>
-			<real>583869098.30494106</real>
-			<key>timeStoppedRecording</key>
-			<real>583869098.31000996</real>
-			<key>title</key>
-			<string>Build target AFNetworking</string>
-			<key>uniqueIdentifier</key>
-			<string>47A90E1B-9C85-48C7-B2D1-EBDA1A3AF3A0</string>
-		</dict>
-	</dict>
+	<dict/>
 	<key>preserveOldLogs</key>
 	<true/>
 </dict>
