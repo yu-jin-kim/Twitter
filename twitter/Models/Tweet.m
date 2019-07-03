@@ -8,6 +8,7 @@
 
 #import "Tweet.h"
 #import "User.h"
+#import "DateTools.h"
 
 @implementation Tweet
 
@@ -38,18 +39,57 @@
         
         // TODO: Format and set createdAtString
         NSString *createdAtOriginalString = dictionary[@"created_at"];
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         // Configure the input format to parse the date string
-        formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
-        // Convert String to Date
-        NSDate *date = [formatter dateFromString:createdAtOriginalString];
+        [dateFormatter setDateFormat:@"E MMM d HH:mm:ss Z y"];
+        //convert string to date
+        NSDate *date = [dateFormatter dateFromString:createdAtOriginalString];
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSDateComponents *components = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitDay) fromDate:date];
+        NSInteger hour = [components hour];
+        NSInteger minute = [components minute];
+        NSInteger second = [components second];
+        NSInteger day = [components day];
+        
         // Configure output format
-        formatter.dateStyle = NSDateFormatterShortStyle;
-        formatter.timeStyle = NSDateFormatterNoStyle;
+        dateFormatter.dateStyle = NSDateFormatterShortStyle;
+        dateFormatter.timeStyle = NSDateFormatterNoStyle;
+        
+        NSDate *timeAgoDateSeconds = [NSDate dateWithTimeIntervalSinceNow:second];
+        NSDate *timeAgoDateMinutes = [NSDate dateWithTimeIntervalSinceNow:minute];
+        NSDate *timeAgoDateHours = [NSDate dateWithTimeIntervalSinceNow:hour];
+        NSDate *timeAgoDateDays = [NSDate dateWithTimeIntervalSinceNow:day];
+        
+        NSString *stringFromHour = [dateFormatter stringFromDate:timeAgoDateHours];
+        NSInteger integerHour = [stringFromHour integerValue];
+        NSString *stringFromMin = [dateFormatter stringFromDate:timeAgoDateMinutes];
+        NSInteger integerMin = [stringFromMin integerValue];
+        NSString *stringFromSec = [dateFormatter stringFromDate:timeAgoDateSeconds];
+        NSInteger integerSec = [stringFromSec integerValue];
+        NSString *stringFromDay = [dateFormatter stringFromDate:timeAgoDateDays];
+        NSInteger integerDay = [stringFromDay integerValue];
+        
         // Convert Date to String
-        self.createdAtString = [formatter stringFromDate:date];
+        if(integerDay <= 1){
+                if(integerMin <= 59){
+                    if(integerSec <= 59){
+                        self.createdAtString = timeAgoDateSeconds.shortTimeAgoSinceNow;
+                    }
+                    else{
+                        self.createdAtString = timeAgoDateMinutes.shortTimeAgoSinceNow;
+                    }
+                }
+                else{
+                    self.createdAtString = timeAgoDateHours.shortTimeAgoSinceNow;
+                }
+        }
+        
+        else{
+            self.createdAtString = [dateFormatter stringFromDate:date];
+        }
     }
     return self;
+    
 }
 
 + (NSMutableArray *)tweetsWithArray:(NSArray *)dictionaries{

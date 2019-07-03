@@ -47,7 +47,7 @@
     
     // Cell Heights
     //self.tableView.rowHeight = 138.0;
-    //self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     //Implement pull to refresh
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -87,7 +87,7 @@
     User *user = tweet.user;
     cell.tweet = tweet;
     cell.authorName.text = user.name;
-    cell.authorUsername.text = user.screenName;
+    cell.authorUsername.text = [@"@" stringByAppendingString:user.screenName];
     cell.datePublished.text = tweet.createdAtString;
     cell.tweetContent.text = tweet.text;
     //convert integer value to strings to display on our cells

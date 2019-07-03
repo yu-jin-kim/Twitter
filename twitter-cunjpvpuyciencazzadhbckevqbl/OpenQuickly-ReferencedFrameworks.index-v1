@@ -9,8 +9,8 @@
 	<string>CoreGraphics</string>
 	<string>QuartzCore</string>
 	<string>Security</string>
-	<string>netinet6</string>
 	<string>CoreText</string>
+	<string>netinet6</string>
 	<string>SafariServices</string>
 	<string>CoreServices</string>
 	<string>UIKit</string>
