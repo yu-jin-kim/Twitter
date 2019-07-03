@@ -17,6 +17,7 @@
 
 @interface TimelineViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) NSMutableArray *tweetsArray;
+//view controller has a tableview as a subview
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @end
@@ -35,7 +36,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    //view controller becomes its datasource and delegate
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
@@ -45,7 +47,7 @@
     
     // Cell Heights
     //self.tableView.rowHeight = 138.0;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    //self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     //Implement pull to refresh
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -56,6 +58,7 @@
 }
 
 - (void)fetchTweets{
+    //we make an api request and it calls the completion handler
     [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
         if (tweets) {
             self.tweetsArray = [[NSMutableArray alloc] init];
@@ -63,9 +66,10 @@
             for (Tweet *tweet in tweets) {
                 NSString *text = tweet.text;
                 NSLog(@"%@", text);
-                //add each tweet to our mutable array
+                //add each tweet to our mutable array (stores data passed into completion handler)
                 [self.tweetsArray addObject:tweet];
             }
+            //reload table view
             [self.tableView reloadData];
         } else {
             NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
@@ -77,6 +81,7 @@
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    //ask datasource for cellsforrowat
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
     Tweet *tweet = self.tweetsArray[indexPath.row];
     User *user = tweet.user;
@@ -85,28 +90,33 @@
     cell.authorUsername.text = user.screenName;
     cell.datePublished.text = tweet.createdAtString;
     cell.tweetContent.text = tweet.text;
+    //convert integer value to strings to display on our cells
     NSString *replyCountString = [NSString stringWithFormat:@"%i",tweet.replyCount];
     cell.replyCount.text = replyCountString;
     NSString *retweetCountString = [NSString stringWithFormat:@"%i",tweet.retweetCount];
     cell.retweetCount.text = retweetCountString;
     NSString *favoriteCountString = [NSString stringWithFormat:@"%i",tweet.favoriteCount];
     cell.favoriteCount.text = favoriteCountString;
+
     [cell.profilePicture setImageWithURL:user.profilePictureURL];
+    //set different images for different states of buttons
     [cell.favoriteButton setImage:[UIImage imageNamed:@"favor-icon"] forState:UIControlStateNormal];
     [cell.favoriteButton setImage:[UIImage imageNamed:@"favor-icon-red"] forState:UIControlStateSelected];
     [cell.retweetButton setImage:[UIImage imageNamed:@"retweet-icon"] forState:UIControlStateNormal];
     [cell.retweetButton setImage:[UIImage imageNamed:@"retweet-icon-green"] forState:UIControlStateSelected];
-
+    
+    //return instance of custom cell with resuse identifier with its elements populated with data at index asked for
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    //ask datasource for numberofrows
+    //returns number of items returned from API
     return self.tweetsArray.count;
 }
 
 - (void)didTweet:(Tweet *)tweet{
     //add new composed tweet to our mutable array and reload data
-    // [self.tweetsArray insertObject:tweet atIndex:0];
     [self.tweetsArray addObject:tweet];
     [self fetchTweets];
 }
@@ -117,8 +127,5 @@
     composeController.delegate = self;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    return 140;
-//}
 
 @end

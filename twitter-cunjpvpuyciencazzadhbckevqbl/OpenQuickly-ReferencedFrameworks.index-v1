@@ -2,15 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>Foundation</string>
 	<string>objc</string>
+	<string>Foundation</string>
 	<string>CoreData</string>
 	<string>AppKit</string>
 	<string>CoreGraphics</string>
 	<string>QuartzCore</string>
 	<string>Security</string>
-	<string>CoreText</string>
 	<string>netinet6</string>
+	<string>CoreText</string>
 	<string>SafariServices</string>
 	<string>CoreServices</string>
 	<string>UIKit</string>

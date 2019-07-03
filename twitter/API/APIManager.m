@@ -14,6 +14,8 @@ static NSString * const baseURLString = @"https://api.twitter.com";
 static NSString * const consumerKey = @"5lUJuO5AUpPUCez4ewYDFrtgh";
 static NSString * const consumerSecret = @"s5ynGqXzstUZwFPxVyMDkYh197qvHOcVM3kwv1o2TKhS1avCdS";
 
+//this is where we make all our api requests
+
 @interface APIManager()
 
 @end
@@ -98,8 +100,8 @@ static NSString * const consumerSecret = @"s5ynGqXzstUZwFPxVyMDkYh197qvHOcVM3kwv
 }
 - (void)retweet:(Tweet *)tweet completion:(void (^)(Tweet *, NSError *))completion{
     
-    NSString *urlStringBase = @"1.1/statuses/retweet/";
-    NSString *urlStringWithID = [urlStringBase stringByAppendingString:tweet.idStr];
+    NSString *urlStringNoID = @"1.1/statuses/retweet/";
+    NSString *urlStringWithID = [urlStringNoID stringByAppendingString:tweet.idStr];
     NSString *urlString = [urlStringWithID stringByAppendingString:@".json"];
     NSDictionary *parameters = @{@"id": tweet.idStr};
     [self POST:urlString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable tweetDictionary) {
@@ -111,8 +113,8 @@ static NSString * const consumerSecret = @"s5ynGqXzstUZwFPxVyMDkYh197qvHOcVM3kwv
 }
 - (void)unretweet:(Tweet *)tweet completion:(void (^)(Tweet *, NSError *))completion{
     
-    NSString *urlStringBase = @"1.1/statuses/unretweet/";
-    NSString *urlStringWithID = [urlStringBase stringByAppendingString:tweet.idStr];
+    NSString *urlStringNoID = @"1.1/statuses/unretweet/";
+    NSString *urlStringWithID = [urlStringNoID stringByAppendingString:tweet.idStr];
     NSString *urlString = [urlStringWithID stringByAppendingString:@".json"];
     NSDictionary *parameters = @{@"id": tweet.idStr};
     [self POST:urlString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable tweetDictionary) {
