@@ -39,11 +39,13 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    
     // Get timeline
     [self fetchTweets];
     
     // Cell Heights
-    self.tableView.rowHeight = 138.0;
+    //self.tableView.rowHeight = 138.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     //Implement pull to refresh
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -114,5 +116,9 @@
     ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
     composeController.delegate = self;
 }
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return 140;
+//}
 
 @end
