@@ -39,53 +39,39 @@
         
         // TODO: Format and set createdAtString
         NSString *createdAtOriginalString = dictionary[@"created_at"];
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         // Configure the input format to parse the date string
-        [dateFormatter setDateFormat:@"E MMM d HH:mm:ss Z y"];
+        
         //convert string to date
-        NSDate *date = [dateFormatter dateFromString:createdAtOriginalString];
-        NSCalendar *calendar = [NSCalendar currentCalendar];
-        NSDateComponents *components = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitDay) fromDate:date];
-        NSInteger hour = [components hour];
-        NSInteger minute = [components minute];
-        NSInteger second = [components second];
-        NSInteger day = [components day];
+        NSDate *date = [formatter dateFromString:createdAtOriginalString];
         
         // Configure output format
-        dateFormatter.dateStyle = NSDateFormatterShortStyle;
-        dateFormatter.timeStyle = NSDateFormatterNoStyle;
+        formatter.dateStyle = NSDateFormatterShortStyle;
+        formatter.timeStyle = NSDateFormatterNoStyle;
         
-        NSDate *timeAgoDateSeconds = [NSDate dateWithTimeIntervalSinceNow:second];
-        NSDate *timeAgoDateMinutes = [NSDate dateWithTimeIntervalSinceNow:minute];
-        NSDate *timeAgoDateHours = [NSDate dateWithTimeIntervalSinceNow:hour];
-        NSDate *timeAgoDateDays = [NSDate dateWithTimeIntervalSinceNow:day];
-        
-        NSString *stringFromHour = [dateFormatter stringFromDate:timeAgoDateHours];
-        NSInteger integerHour = [stringFromHour integerValue];
-        NSString *stringFromMin = [dateFormatter stringFromDate:timeAgoDateMinutes];
-        NSInteger integerMin = [stringFromMin integerValue];
-        NSString *stringFromSec = [dateFormatter stringFromDate:timeAgoDateSeconds];
-        NSInteger integerSec = [stringFromSec integerValue];
-        NSString *stringFromDay = [dateFormatter stringFromDate:timeAgoDateDays];
-        NSInteger integerDay = [stringFromDay integerValue];
-        
-        // Convert Date to String
-        if(integerDay <= 1){
-                if(integerMin <= 59){
-                    if(integerSec <= 59){
-                        self.createdAtString = timeAgoDateSeconds.shortTimeAgoSinceNow;
-                    }
-                    else{
-                        self.createdAtString = timeAgoDateMinutes.shortTimeAgoSinceNow;
-                    }
-                }
-                else{
-                    self.createdAtString = timeAgoDateHours.shortTimeAgoSinceNow;
-                }
-        }
-        
-        else{
-            self.createdAtString = [dateFormatter stringFromDate:date];
+        [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+        [formatter setDateFormat:@"E MMM d HH:mm:ss Z y"];
+        NSDate *convertedDate = [formatter dateFromString:createdAtOriginalString];
+        NSDate *todayDate = [NSDate date];
+        NSLog(@"%@", convertedDate);
+        NSLog(@"%@", todayDate);
+        double ti = [convertedDate timeIntervalSinceDate:todayDate];
+        ti = ti * -1;
+        NSLog(@"%f",ti);
+        if (ti < 60) {
+            int diff = ti;
+            self.createdAtString = [NSString stringWithFormat:@"%ds", diff];
+        } else if (ti < 3600) {
+            int diff = round(ti / 60);
+            self.createdAtString = [NSString stringWithFormat:@"%dm", diff];
+        } else if (ti < 86400) {
+            int diff = round(ti / 60 / 60);
+            self.createdAtString = [NSString stringWithFormat:@"%dh", diff];
+        } else if (ti < 2629743) {
+            int diff = round(ti / 60 / 60 / 24);
+            self.createdAtString = [NSString stringWithFormat:@"%dd", diff];
+        } else {
+            self.createdAtString = [formatter stringFromDate:date];
         }
     }
     return self;
@@ -100,5 +86,7 @@
     }
     return tweets;
 }
+
+
 
 @end

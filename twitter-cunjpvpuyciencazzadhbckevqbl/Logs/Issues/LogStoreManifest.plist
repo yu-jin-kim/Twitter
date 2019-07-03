@@ -32,7 +32,7 @@
 			<key>uniqueIdentifier</key>
 			<string>19DD46DD-B9D0-4069-B0A4-31A21FE198A4</string>
 		</dict>
-		<key>2A20C894-50BF-4002-BB1A-424DF2EE59ED</key>
+		<key>97BF704B-B8C1-4862-AC09-7B9C7DA21FD4</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -41,7 +41,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
 			<key>fileName</key>
-			<string>2A20C894-50BF-4002-BB1A-424DF2EE59ED.xcactivitylog</string>
+			<string>97BF704B-B8C1-4862-AC09-7B9C7DA21FD4.xcactivitylog</string>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
@@ -50,13 +50,13 @@
 			<key>signature</key>
 			<string>twitter-fclkaosonhktcrahowkfydwtsxdn</string>
 			<key>timeStartedRecording</key>
-			<real>583882492.63885403</real>
+			<real>583884901.15432096</real>
 			<key>timeStoppedRecording</key>
-			<real>583882493.38313603</real>
+			<real>583884901.40421903</real>
 			<key>title</key>
 			<string>Build target twitter</string>
 			<key>uniqueIdentifier</key>
-			<string>2A20C894-50BF-4002-BB1A-424DF2EE59ED</string>
+			<string>97BF704B-B8C1-4862-AC09-7B9C7DA21FD4</string>
 		</dict>
 		<key>9BA10784-88D9-4A85-872A-C7E783D34A14</key>
 		<dict>

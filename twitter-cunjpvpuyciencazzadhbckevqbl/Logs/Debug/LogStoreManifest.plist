@@ -198,6 +198,38 @@
 			<key>uniqueIdentifier</key>
 			<string>25ECD891-99BB-4666-B817-FC75943B751F</string>
 		</dict>
+		<key>2AD57E94-5FD8-408B-9060-68346D4185F1</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>2AD57E94-5FD8-408B-9060-68346D4185F1.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>twitter project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>twitter</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug twitter</string>
+			<key>timeStartedRecording</key>
+			<real>583882577.75777698</real>
+			<key>timeStoppedRecording</key>
+			<real>583883450.05662704</real>
+			<key>title</key>
+			<string>Debug twitter</string>
+			<key>uniqueIdentifier</key>
+			<string>2AD57E94-5FD8-408B-9060-68346D4185F1</string>
+		</dict>
 		<key>2B543CD7-45F8-4BC7-9A70-DF4EED87FD5F</key>
 		<dict>
 			<key>className</key>
@@ -294,6 +326,38 @@
 			<key>uniqueIdentifier</key>
 			<string>31A0E20B-9C33-411D-A8BF-245F2AF7050A</string>
 		</dict>
+		<key>381BB358-A80C-47AA-8AA3-D97BB56647C8</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>381BB358-A80C-47AA-8AA3-D97BB56647C8.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>twitter project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>twitter</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug twitter</string>
+			<key>timeStartedRecording</key>
+			<real>583884706.21670401</real>
+			<key>timeStoppedRecording</key>
+			<real>583884771.83359301</real>
+			<key>title</key>
+			<string>Debug twitter</string>
+			<key>uniqueIdentifier</key>
+			<string>381BB358-A80C-47AA-8AA3-D97BB56647C8</string>
+		</dict>
 		<key>40849B06-4930-45A9-9F73-4BA7BD2505E4</key>
 		<dict>
 			<key>className</key>
@@ -358,6 +422,38 @@
 			<key>uniqueIdentifier</key>
 			<string>4D8F934B-AE73-412E-9AD0-B4891BB57F8E</string>
 		</dict>
+		<key>4E7B1D50-0479-4212-B877-8DC36F4FCF4C</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>4E7B1D50-0479-4212-B877-8DC36F4FCF4C.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>twitter project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>twitter</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug twitter</string>
+			<key>timeStartedRecording</key>
+			<real>583884827.93364096</real>
+			<key>timeStoppedRecording</key>
+			<real>583884873.04085505</real>
+			<key>title</key>
+			<string>Debug twitter</string>
+			<key>uniqueIdentifier</key>
+			<string>4E7B1D50-0479-4212-B877-8DC36F4FCF4C</string>
+		</dict>
 		<key>4FAE7BF0-1323-4919-B858-F90FA84835EE</key>
 		<dict>
 			<key>className</key>
@@ -389,6 +485,38 @@
 			<string>Debug twitter</string>
 			<key>uniqueIdentifier</key>
 			<string>4FAE7BF0-1323-4919-B858-F90FA84835EE</string>
+		</dict>
+		<key>50D0C1BF-5FBE-4A23-AE11-07693F50C039</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>50D0C1BF-5FBE-4A23-AE11-07693F50C039.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>twitter project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>twitter</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug twitter</string>
+			<key>timeStartedRecording</key>
+			<real>583884872.909917</real>
+			<key>timeStoppedRecording</key>
+			<real>583884901.22403705</real>
+			<key>title</key>
+			<string>Debug twitter</string>
+			<key>uniqueIdentifier</key>
+			<string>50D0C1BF-5FBE-4A23-AE11-07693F50C039</string>
 		</dict>
 		<key>510A45EB-2881-4226-9DBF-19F4793893A7</key>
 		<dict>
@@ -870,6 +998,70 @@
 			<key>uniqueIdentifier</key>
 			<string>9FE9861B-3F01-4920-A54C-8A366E51110A</string>
 		</dict>
+		<key>A7A302DE-C83F-4109-9188-050454D2667E</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>A7A302DE-C83F-4109-9188-050454D2667E.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>twitter project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>twitter</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug twitter</string>
+			<key>timeStartedRecording</key>
+			<real>583883914.16895902</real>
+			<key>timeStoppedRecording</key>
+			<real>583884681.71017897</real>
+			<key>title</key>
+			<string>Debug twitter</string>
+			<key>uniqueIdentifier</key>
+			<string>A7A302DE-C83F-4109-9188-050454D2667E</string>
+		</dict>
+		<key>A890AECB-C306-465B-8FD1-9BE5EC4EB2AF</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>A890AECB-C306-465B-8FD1-9BE5EC4EB2AF.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>twitter project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>twitter</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug twitter</string>
+			<key>timeStartedRecording</key>
+			<real>583883451.41951799</real>
+			<key>timeStoppedRecording</key>
+			<real>583883912.57849801</real>
+			<key>title</key>
+			<string>Debug twitter</string>
+			<key>uniqueIdentifier</key>
+			<string>A890AECB-C306-465B-8FD1-9BE5EC4EB2AF</string>
+		</dict>
 		<key>AC42376F-7ECD-42A9-BDCB-BA09C3770E9F</key>
 		<dict>
 			<key>className</key>
@@ -933,6 +1125,38 @@
 			<string>Debug twitter</string>
 			<key>uniqueIdentifier</key>
 			<string>AD3E0672-CED9-4340-BF0C-C18AFEF21104</string>
+		</dict>
+		<key>BB0808FB-2C29-4024-808C-5002C8C00190</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>BB0808FB-2C29-4024-808C-5002C8C00190.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>twitter project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>twitter</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug twitter</string>
+			<key>timeStartedRecording</key>
+			<real>583884683.38915706</real>
+			<key>timeStoppedRecording</key>
+			<real>583884706.00329602</real>
+			<key>title</key>
+			<string>Debug twitter</string>
+			<key>uniqueIdentifier</key>
+			<string>BB0808FB-2C29-4024-808C-5002C8C00190</string>
 		</dict>
 		<key>BBC162B0-E0D9-43DD-A85D-5FE6D491F87B</key>
 		<dict>
@@ -1094,6 +1318,38 @@
 			<key>uniqueIdentifier</key>
 			<string>C3156215-CF86-4F0E-B6E1-0FF8D2119FE1</string>
 		</dict>
+		<key>C998F871-781F-498B-9B47-9EB2E309F8FF</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>C998F871-781F-498B-9B47-9EB2E309F8FF.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>twitter project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>twitter</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug twitter</string>
+			<key>timeStartedRecording</key>
+			<real>583882493.27851903</real>
+			<key>timeStoppedRecording</key>
+			<real>583882576.62093306</real>
+			<key>title</key>
+			<string>Debug twitter</string>
+			<key>uniqueIdentifier</key>
+			<string>C998F871-781F-498B-9B47-9EB2E309F8FF</string>
+		</dict>
 		<key>CFFC026E-0385-4D33-9787-B08359FF1C04</key>
 		<dict>
 			<key>className</key>
@@ -1222,6 +1478,38 @@
 			<key>uniqueIdentifier</key>
 			<string>D38C984A-0D24-427A-B448-1C8F32DF4746</string>
 		</dict>
+		<key>DA03409E-5EA1-496F-B53B-0A26B8209BD6</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>DA03409E-5EA1-496F-B53B-0A26B8209BD6.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>twitter project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>twitter</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug twitter</string>
+			<key>timeStartedRecording</key>
+			<real>583884775.40353405</real>
+			<key>timeStoppedRecording</key>
+			<real>583884798.31500196</real>
+			<key>title</key>
+			<string>Debug twitter</string>
+			<key>uniqueIdentifier</key>
+			<string>DA03409E-5EA1-496F-B53B-0A26B8209BD6</string>
+		</dict>
 		<key>DB7560AE-B44B-453C-B114-C836F7446BBE</key>
 		<dict>
 			<key>className</key>
@@ -1285,6 +1573,38 @@
 			<string>Debug twitter</string>
 			<key>uniqueIdentifier</key>
 			<string>E1671475-87CF-4D47-AA9A-36BBD94DF850</string>
+		</dict>
+		<key>E66BDE38-AD98-4A0E-88D5-6319A29C1E07</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>E66BDE38-AD98-4A0E-88D5-6319A29C1E07.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>twitter project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>twitter</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug twitter</string>
+			<key>timeStartedRecording</key>
+			<real>583884798.53538704</real>
+			<key>timeStoppedRecording</key>
+			<real>583884827.719504</real>
+			<key>title</key>
+			<string>Debug twitter</string>
+			<key>uniqueIdentifier</key>
+			<string>E66BDE38-AD98-4A0E-88D5-6319A29C1E07</string>
 		</dict>
 		<key>E6EDB82D-18D3-4BFD-808C-3A8CB1250C28</key>
 		<dict>
