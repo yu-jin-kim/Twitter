@@ -14,6 +14,7 @@
 #import "ComposeViewController.h"
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import "DetailsViewController.h"
 
 @interface TimelineViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) NSMutableArray *tweetsArray;
@@ -122,10 +123,21 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    UINavigationController *navigationController = [segue destinationViewController];
-    ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
-    composeController.delegate = self;
+    if ([[segue identifier] isEqualToString:@"composeSegue"]){
+        //prepare for segue into compose view controller
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+        composeController.delegate = self;
+    }
+    else{
+        //prepare for segue into details view controller
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.tweet = self.tweetsArray[indexPath.row];
+    }
 }
+
 
 
 @end
