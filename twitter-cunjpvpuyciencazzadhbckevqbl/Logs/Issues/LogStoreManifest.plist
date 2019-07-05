@@ -32,32 +32,6 @@
 			<key>uniqueIdentifier</key>
 			<string>19DD46DD-B9D0-4069-B0A4-31A21FE198A4</string>
 		</dict>
-		<key>457E2FB0-5D62-44C2-BD87-259763EA261A</key>
-		<dict>
-			<key>className</key>
-			<string>IDEActivityLogSection</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
-			<key>fileName</key>
-			<string>457E2FB0-5D62-44C2-BD87-259763EA261A.xcactivitylog</string>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>W</string>
-			</dict>
-			<key>signature</key>
-			<string>twitter-fclkaosonhktcrahowkfydwtsxdn</string>
-			<key>timeStartedRecording</key>
-			<real>583888178.65322697</real>
-			<key>timeStoppedRecording</key>
-			<real>583888179.38247895</real>
-			<key>title</key>
-			<string>Build target twitter</string>
-			<key>uniqueIdentifier</key>
-			<string>457E2FB0-5D62-44C2-BD87-259763EA261A</string>
-		</dict>
 		<key>9BA10784-88D9-4A85-872A-C7E783D34A14</key>
 		<dict>
 			<key>className</key>
@@ -161,6 +135,32 @@
 			<string>Build target DateTools</string>
 			<key>uniqueIdentifier</key>
 			<string>B17F9EDD-238D-4F5F-BAB4-74B7B50E8E8C</string>
+		</dict>
+		<key>EA5DC57F-0C1B-4B71-93A8-EC682F81D34C</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
+			<key>fileName</key>
+			<string>EA5DC57F-0C1B-4B71-93A8-EC682F81D34C.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>signature</key>
+			<string>twitter-fclkaosonhktcrahowkfydwtsxdn</string>
+			<key>timeStartedRecording</key>
+			<real>584057958.23898196</real>
+			<key>timeStoppedRecording</key>
+			<real>584057959.274665</real>
+			<key>title</key>
+			<string>Build target twitter</string>
+			<key>uniqueIdentifier</key>
+			<string>EA5DC57F-0C1B-4B71-93A8-EC682F81D34C</string>
 		</dict>
 	</dict>
 	<key>preserveOldLogs</key>

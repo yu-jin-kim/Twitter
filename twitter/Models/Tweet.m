@@ -53,11 +53,11 @@
         [formatter setDateFormat:@"E MMM d HH:mm:ss Z y"];
         NSDate *convertedDate = [formatter dateFromString:createdAtOriginalString];
         NSDate *todayDate = [NSDate date];
-        NSLog(@"%@", convertedDate);
-        NSLog(@"%@", todayDate);
+        //NSLog(@"%@", convertedDate);
+        //NSLog(@"%@", todayDate);
         double ti = [convertedDate timeIntervalSinceDate:todayDate];
         ti = ti * -1;
-        NSLog(@"%f",ti);
+        //NSLog(@"%f",ti);
         if (ti < 60) {
             int diff = ti;
             self.createdAtString = [NSString stringWithFormat:@"%ds", diff];

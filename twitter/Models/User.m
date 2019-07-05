@@ -17,8 +17,13 @@
         self.screenName = dictionary[@"screen_name"];
         NSString *profilePictureURLString = dictionary[@"profile_image_url_https"];
         self.profilePictureURL = [NSURL URLWithString:profilePictureURLString];
-        
-        // Initialize any other properties
+        NSString *profileBannerURLString = dictionary[@"profile_banner_url"];
+        self.profileBannerURL = [NSURL URLWithString:profileBannerURLString];
+        self.createdAtString = dictionary[@"created_at"];
+        self.followersCount = [dictionary[@"followers_count"] intValue];
+        self.friendsCount = [dictionary[@"friends_count"] intValue];
+        self.userDescription = dictionary[@"description"];
+        self.idStr = dictionary[@"id_str"];
     }
     return self;
 }

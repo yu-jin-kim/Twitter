@@ -9,19 +9,24 @@
 #import "TweetCell.h"
 #import "APIManager.h"
 
+
 //we define a custom table view cell and set its reuse identifier on our storyboard
 @implementation TweetCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapUserProfile:)];
+    [self.profilePicture addGestureRecognizer:profileTapGestureRecognizer];
+    [self.profilePicture setUserInteractionEnabled:YES];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void) didTapUserProfile:(UITapGestureRecognizer *)sender{
+    // TODO: Call method on delegate
+    [self.delegate tweetCell:self didTap:self.tweet.user];
+    
 }
+
 
 - (IBAction)retweetPressed:(id)sender {
     if(self.tweet.retweeted == NO){
@@ -103,6 +108,9 @@
     self.favoriteCount.text = favoriteCountString;
 }
 
+- (void)tweetCell:(TweetCell *) tweetCell didTap: (User *)user{
+    [self.delegate tweetCell:self didTap:self.tweet.user];
+}
 
 
 @end

@@ -10,7 +10,7 @@
 #import "APIManager.h"
 #import "TimelineViewController.h"
 
-@interface ComposeViewController ()
+@interface ComposeViewController () <UITextViewDelegate>
 
 @end
 
@@ -19,8 +19,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tweetTextView.delegate = self;
 }
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    // Set the max character limit
+    int characterLimit = 140;
+    
+    // Construct what the new text would be if we allowed the user's latest edit
+    NSString *newText = [self.tweetTextView.text stringByReplacingCharactersInRange:range withString:text];
+    
+    // TODO: Update Character Count Label
+    int newLength = (int)newText.length;
+    self.characterCount.text = [NSString stringWithFormat:@"%d",characterLimit-newLength];
+    
+    // The new text should be allowed? True/False
+    return newText.length < characterLimit;
+}
 
 
 - (IBAction)tweetPressed:(id)sender {

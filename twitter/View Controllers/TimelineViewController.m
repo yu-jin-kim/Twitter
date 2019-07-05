@@ -15,6 +15,7 @@
 #import "LoginViewController.h"
 #import "AppDelegate.h"
 #import "DetailsViewController.h"
+#import "ProfileViewController.h"
 
 @interface TimelineViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) NSMutableArray *tweetsArray;
@@ -25,6 +26,11 @@
 
 
 @implementation TimelineViewController
+
+- (void)tweetCell:(TweetCell *)tweetCell didTap:(User *)user{
+    // TODO: Perform segue to profile view controller
+    [self performSegueWithIdentifier:@"profileSegue" sender:user];
+}
 
 - (IBAction)logOut:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
@@ -65,8 +71,8 @@
             self.tweetsArray = [[NSMutableArray alloc] init];
             NSLog(@"😎😎😎 Successfully loaded home timeline");
             for (Tweet *tweet in tweets) {
-                NSString *text = tweet.text;
-                NSLog(@"%@", text);
+                //NSString *text = tweet.text;
+                //NSLog(@"%@", text);
                 //add each tweet to our mutable array (stores data passed into completion handler)
                 [self.tweetsArray addObject:tweet];
             }
@@ -107,6 +113,7 @@
     [cell.retweetButton setImage:[UIImage imageNamed:@"retweet-icon-green"] forState:UIControlStateSelected];
     
     //return instance of custom cell with resuse identifier with its elements populated with data at index asked for
+    cell.delegate = self;
     return cell;
 }
 
@@ -129,14 +136,19 @@
         ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
         composeController.delegate = self;
     }
+    else if ([[segue identifier] isEqualToString:@"profileSegue"]){
+        ProfileViewController *profileViewController = [segue destinationViewController];
+        profileViewController.user = sender;
+    }
     else{
         //prepare for segue into details view controller
-        UITableViewCell *tappedCell = sender;
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        TweetCell *tappedCell = sender;
         DetailsViewController *detailsViewController = [segue destinationViewController];
-        detailsViewController.tweet = self.tweetsArray[indexPath.row];
+        detailsViewController.tweet = tappedCell.tweet;
     }
 }
+
+
 
 
 
