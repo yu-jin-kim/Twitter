@@ -55,7 +55,8 @@
 
 - (void)fetchTweets{
     //we make an api request and it calls the completion handler
-    [[APIManager shared] getUserTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
+    NSDictionary *parameter = @{@"screen_name": self.user.screenName};
+    [[APIManager shared] getUserTimelineWithParam:parameter WithCompletion:^(NSArray *tweets, NSError *error) {
         if (tweets) {
             self.tweetsArray = [[NSMutableArray alloc] init];
             NSLog(@"😎😎😎 Successfully loaded user timeline");

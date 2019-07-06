@@ -16,16 +16,64 @@
 #import "AppDelegate.h"
 #import "DetailsViewController.h"
 #import "ProfileViewController.h"
+#import "InfiniteScrollActivityView.h"
 
-@interface TimelineViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface TimelineViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 @property (strong, nonatomic) NSMutableArray *tweetsArray;
 //view controller has a tableview as a subview
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic) bool isMoreDataLoading;
+
 @end
 
 
 @implementation TimelineViewController
+
+bool isMoreDataLoading = false;
+InfiniteScrollActivityView* loadingMoreView;
+
+-(void)loadMoreData{
+    Tweet *lastTweet = [self.tweetsArray lastObject];
+    NSString *lastObjStrID = lastTweet.idStr;
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    NSNumber *lastObjID = [f numberFromString:lastObjStrID];
+    long lastObjLong = [lastObjID longValue];
+    long finalID = lastObjLong -1;
+    NSNumber *finalIDNum = @(finalID);
+    NSDictionary *parameter = @{@"max_id": finalIDNum};
+    [[APIManager shared] getHomeTimelineWithParam: parameter WithCompletion:^(NSArray *tweets, NSError *error) {
+        if (error != nil) {
+            
+        }
+        else{
+            self.isMoreDataLoading = false;
+            [self.tweetsArray addObjectsFromArray:tweets];
+            [self.tableView reloadData];
+        }
+    }];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if(!isMoreDataLoading){
+        // Calculate the position of one screen length before the bottom of the results
+        int scrollViewContentHeight = self.tableView.contentSize.height;
+        int scrollOffsetThreshold = scrollViewContentHeight - self.tableView.bounds.size.height;
+        
+        // When the user has scrolled past the threshold, start requesting
+        if(scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
+            isMoreDataLoading = true;
+            
+            // Update position of loadingMoreView, and start loading indicator
+            CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+            loadingMoreView.frame = frame;
+            [loadingMoreView startAnimating];
+            
+            // Code to load more results
+            [self loadMoreData];
+        }
+    }
+}
 
 - (void)tweetCell:(TweetCell *)tweetCell didTap:(User *)user{
     // TODO: Perform segue to profile view controller
@@ -61,12 +109,22 @@
     [self.refreshControl addTarget:self action:@selector(fetchTweets) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     
+    // Set up Infinite Scroll loading indicator
+    CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+    loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
+    loadingMoreView.hidden = true;
+    [self.tableView addSubview:loadingMoreView];
+    
+    UIEdgeInsets insets = self.tableView.contentInset;
+    insets.bottom += InfiniteScrollActivityView.defaultHeight;
+    self.tableView.contentInset = insets;
+    
     
 }
 
 - (void)fetchTweets{
     //we make an api request and it calls the completion handler
-    [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
+    [[APIManager shared] getHomeTimelineWithParam: nil WithCompletion:^(NSArray *tweets, NSError *error) {
         if (tweets) {
             self.tweetsArray = [[NSMutableArray alloc] init];
             NSLog(@"😎😎😎 Successfully loaded home timeline");
@@ -135,6 +193,12 @@
         UINavigationController *navigationController = [segue destinationViewController];
         ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
         composeController.delegate = self;
+    }
+    else if([[segue identifier] isEqualToString:@"replySegue"]){
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+        composeController.delegate = self;
+        
     }
     else if ([[segue identifier] isEqualToString:@"profileSegue"]){
         ProfileViewController *profileViewController = [segue destinationViewController];

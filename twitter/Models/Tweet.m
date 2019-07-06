@@ -32,10 +32,14 @@
         self.favorited = [dictionary[@"favorited"] boolValue];
         self.retweetCount = [dictionary[@"retweet_count"] intValue];
         self.retweeted = [dictionary[@"retweeted"] boolValue];
+
         
         // TODO: initialize user
         NSDictionary *user = dictionary[@"user"];
         self.user = [[User alloc] initWithDictionary:user];
+        if ([self.user.screenName isEqualToString:@"mekkaokereke"]){
+            NSLog(@"%@", self.text);
+        }
         
         // TODO: Format and set createdAtString
         NSString *createdAtOriginalString = dictionary[@"created_at"];
